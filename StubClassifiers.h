@@ -8,23 +8,23 @@
  * @author [Your Name] & [Teammate Name]
  */
 
-/**
- * @class KNNClassifier
- * @brief Placeholder — all methods just print their function name.
- */
+ /**
+  * @class KNNClassifier
+  * @brief Placeholder — all methods just print their function name.
+  */
 class KNNClassifier : public Classifier {
 public:
     void train(const std::vector<DataPoint>& trainingData) override {
-        // TODO: Print function name
+        std::cout << "KNNClassifier::train() - Not implemented yet." << std::endl;
     }
 
     int predict(const DataPoint& point) override {
-        // TODO: Print function name
+        std::cout << "KNNClassifier::predict() - Not implemented yet." << std::endl;
         return -1;
     }
 
     double evaluate(const std::vector<DataPoint>& testData) override {
-        // TODO: Print function name
+        std::cout << "KNNClassifier::evaluate() - Not implemented yet." << std::endl;
         return 0.0;
     }
 
@@ -38,16 +38,16 @@ public:
 class AnotherClassifier : public Classifier {
 public:
     void train(const std::vector<DataPoint>& trainingData) override {
-        // TODO: Print function name
+        std::cout << "AnotherClassifier::train() - Not implemented yet." << std::endl;
     }
 
     int predict(const DataPoint& point) override {
-        // TODO: Print function name
+        std::cout << "AnotherClassifier::predict() - Not implemented yet." << std::endl;
         return -1;
     }
 
     double evaluate(const std::vector<DataPoint>& testData) override {
-        // TODO: Print function name
+        std::cout << "AnotherClassifier::evaluate() - Not implemented yet." << std::endl;
         return 0.0;
     }
 
