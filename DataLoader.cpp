@@ -6,7 +6,7 @@
 /**
  * @file DataLoader.cpp
  * @brief Implementation of DataLoader.
- * @author [Your Name] & [Teammate Name]
+ * @author Kristen & Drayven
  */
 
 std::vector<DataPoint> DataLoader::loadLabeledData(const std::string& filename) {

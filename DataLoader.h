@@ -6,7 +6,7 @@
 /**
  * @file DataLoader.h
  * @brief Handles reading and writing data files.
- * @author [Your Name] & [Teammate Name]
+ * @author Kristen & Drayven
  */
 
 /**

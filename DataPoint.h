@@ -4,7 +4,7 @@
 /**
  * @file DataPoint.h
  * @brief Represents a single 3D gravity vector data point.
- * @author [Your Name] & [Teammate Name]
+ * @author Kristen & Drayven
  */
 
  /**

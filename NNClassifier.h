@@ -4,7 +4,7 @@
 /**
  * @file NNClassifier.h
  * @brief Nearest Neighbor (NN) classifier.
- * @author [Your Name] & [Teammate Name]
+ * @author Kristen & Drayven
  */
 
 /**

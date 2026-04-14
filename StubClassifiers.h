@@ -5,7 +5,7 @@
 /**
  * @file StubClassifiers.h
  * @brief KNNClassifier and AnotherClassifier stubs (not implemented).
- * @author [Your Name] & [Teammate Name]
+ * @author Kristen & Drayven
  */
 
  /**

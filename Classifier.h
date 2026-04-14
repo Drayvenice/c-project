@@ -6,7 +6,7 @@
 /**
  * @file Classifier.h
  * @brief Abstract base class for all classifiers.
- * @author [Your Name] & [Teammate Name]
+ * @author Kristen & Drayven
  */
 
 /**

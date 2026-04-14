@@ -215,5 +215,5 @@ void runTestAccuracy(Classifier* clf) {
 }
 
 void clearInput() {
-    // TODO: implement
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
