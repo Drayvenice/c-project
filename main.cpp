@@ -34,9 +34,70 @@ void clearInput();
 int main() {
     printBanner();
 
-    // TODO: classifier selection menu
-    // TODO: run selected classifier
+    // Load training data
+    std::cout << "\n[System] Loading training data...\n";
+    std::vector<DataPoint> trainingData = DataLoader::loadLabeledData(TRAINING_FILE);
+
+    if (trainingData.empty()) {
+        std::cerr << "[Error] Training data could not be loaded. Exiting.\n";
+        return 1;
+    }
+
+    // Classifier selection menu
+    bool running = true;
+    while (running) {
+        std::cout << "\n========================================\n";
+        std::cout << "  Select a Classifier\n";
+        std::cout << "========================================\n";
+        std::cout << "  1. NNClassifier  (Nearest Neighbor)\n";
+        std::cout << "  2. KNNClassifier (Not implemented)\n";
+        std::cout << "  3. AnotherClassifier (Not implemented)\n";
+        std::cout << "  0. Exit\n";
+        std::cout << "----------------------------------------\n";
+        std::cout << "  Your choice: ";
+
+        int choice;
+        std::cin >> choice;
+        clearInput();
+
+        if (choice == 0) {
+            std::cout << "\nGoodbye!\n";
+            running = false;
+            break;
+        }
+
+        // Create chosen classifier
+        Classifier* clf = nullptr;
+        switch (choice) {
+        case 1: clf = new NNClassifier(); break;
+        case 2: clf = new KNNClassifier(); break;
+        case 3: clf = new AnotherClassifier(); break;
+        default:
+            std::cout << "[Error] Invalid choice. Please try again.\n";
+            continue;
+        }
+
+        // Train it
+        clf->train(trainingData);
+
+        // If stub — inform user
+        if (choice == 2 || choice == 3) {
+            std::cout << "\n[Notice] " << clf->getName()
+                << " is not implemented yet.\n";
+            delete clf;
+            continue;
+        }
+
+        // Run NN mode
+        runNNMode(clf);
+        delete clf;
+    }
+
     return 0;
+}
+
+void clearInput() {
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 void printBanner() {
