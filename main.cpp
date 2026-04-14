@@ -14,11 +14,11 @@
  * @course PROG71020 - OOP Winter 2026
  */
 
- // ─── Constants ───────────────────────────────────────────────────────────────
+ // Constants
 const std::string TRAINING_FILE = "trainingData.txt";
 const std::string TESTING_FILE = "testingData.txt";
 
-// ─── Forward declarations ─────────────────────────────────────────────────────
+// Forward declarations
 void printBanner();
 void runNNMode(Classifier* clf);
 void runManualInput(Classifier* clf);
@@ -26,10 +26,9 @@ void runFileMode(Classifier* clf);
 void runTestAccuracy(Classifier* clf);
 void clearInput();
 
-// ─────────────────────────────────────────────────────────────────────────────
-
 /**
  * @brief Application entry point.
+ * @return 0 on success, 1 on error
  */
 int main() {
     printBanner();
@@ -80,7 +79,7 @@ int main() {
         // Train it
         clf->train(trainingData);
 
-        // If stub — inform user
+        // If stub - inform user
         if (choice == 2 || choice == 3) {
             std::cout << "\n[Notice] " << clf->getName()
                 << " is not implemented yet.\n";
@@ -96,10 +95,9 @@ int main() {
     return 0;
 }
 
-void clearInput() {
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
-
+/**
+ * @brief Displays the application banner and orientation table.
+ */
 void printBanner() {
     std::cout << "============================================\n";
     std::cout << "   Phone Orientation Classifier\n";
@@ -115,6 +113,10 @@ void printBanner() {
     std::cout << "  6    Landscape right\n";
 }
 
+/**
+ * @brief Handles the NN classifier sub-menu.
+ * @param clf Pointer to the trained classifier
+ */
 void runNNMode(Classifier* clf) {
     bool inNNMenu = true;
     while (inNNMenu) {
@@ -139,6 +141,10 @@ void runNNMode(Classifier* clf) {
     }
 }
 
+/**
+ * @brief Handles manual x,y,z input and prints the predicted orientation.
+ * @param clf Pointer to the trained classifier
+ */
 void runManualInput(Classifier* clf) {
     std::cout << "\nEnter x, y, z values (space-separated, range -1 to 1):\n";
     std::cout << "  x y z: ";
@@ -163,6 +169,10 @@ void runManualInput(Classifier* clf) {
     std::cout << "  Orientation: " << point.getOrientationName() << "\n";
 }
 
+/**
+ * @brief Reads an unknown data file, classifies all points, writes result.txt.
+ * @param clf Pointer to the trained classifier
+ */
 void runFileMode(Classifier* clf) {
     std::cout << "\nEnter input filename (e.g., unknownData.txt): ";
     std::string inputFile;
@@ -200,6 +210,10 @@ void runFileMode(Classifier* clf) {
         std::cout << "  ... and " << (points.size() - 5) << " more.\n";
 }
 
+/**
+ * @brief Evaluates classifier accuracy using testingData.txt.
+ * @param clf Pointer to the trained classifier
+ */
 void runTestAccuracy(Classifier* clf) {
     std::cout << "\n[Testing] Loading " << TESTING_FILE << "...\n";
 
@@ -214,6 +228,9 @@ void runTestAccuracy(Classifier* clf) {
     std::cout << "  Final Accuracy: " << accuracy << "%\n";
 }
 
+/**
+ * @brief Clears the input buffer.
+ */
 void clearInput() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
