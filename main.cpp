@@ -116,11 +116,51 @@ void printBanner() {
 }
 
 void runNNMode(Classifier* clf) {
-    // TODO: implement
+    bool inNNMenu = true;
+    while (inNNMenu) {
+        std::cout << "\n--- " << clf->getName() << " ---\n";
+        std::cout << "  1. Enter x,y,z manually\n";
+        std::cout << "  2. Classify a file\n";
+        std::cout << "  3. Test accuracy on testingData.txt\n";
+        std::cout << "  0. Back\n";
+        std::cout << "  Your choice: ";
+
+        int choice;
+        std::cin >> choice;
+        clearInput();
+
+        switch (choice) {
+        case 1: runManualInput(clf); break;
+        case 2: runFileMode(clf); break;
+        case 3: runTestAccuracy(clf); break;
+        case 0: inNNMenu = false; break;
+        default: std::cout << "[Error] Invalid choice.\n"; break;
+        }
+    }
 }
 
 void runManualInput(Classifier* clf) {
-    // TODO: implement
+    std::cout << "\nEnter x, y, z values (space-separated, range -1 to 1):\n";
+    std::cout << "  x y z: ";
+
+    double x, y, z;
+    std::cin >> x >> y >> z;
+    clearInput();
+
+    DataPoint point(x, y, z);
+
+    if (!point.isValid()) {
+        std::cout << "[Error] Values must be between -1 and 1. Please try again.\n";
+        return;
+    }
+
+    int label = clf->predict(point);
+    point.label = label;
+
+    std::cout << "\nResult:\n";
+    std::cout << "  Input:       (" << x << ", " << y << ", " << z << ")\n";
+    std::cout << "  Label:       " << label << "\n";
+    std::cout << "  Orientation: " << point.getOrientationName() << "\n";
 }
 
 void runFileMode(Classifier* clf) {
