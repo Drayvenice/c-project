@@ -44,22 +44,24 @@ int NNClassifier::predict(const DataPoint& point) {
 
     return bestLabel;
 }
-double NNClassifier::evaluate(const std::vector<DataPoint>& testData) {
     // TODO: For each point in testData, call predict()
     // TODO: Compare predicted label vs actual label
     // TODO: Return accuracy = (correct / total) * 100
-    int correct = 0;
-
-    for (const auto& point : testData) {
-        int predicted = predict(point);
-        if (predicted == point.label) {
-            correct++;
+    double NNClassifier::evaluate(const std::vector<DataPoint>&testData) {
+        // Handle empty test data safely
+        if (testData.empty()) {
+            std::cout << "[NNClassifier] No test data provided." << std::endl;
+            return 0.0;
         }
-    }
 
-    double accuracy = (double)correct / testData.size() * 100.0;
-    std::cout << "[NNClassifier] Accuracy: " << correct << "/"
-        << testData.size() << " = " << accuracy << "%" << std::endl;
+        int correct = 0;
 
-    return accuracy;
+        for (const auto& point : testData) {
+            int predicted = predict(point);
+            if (predicted == point.label) {
+                correct++;
+            }
+        }
+
+        double accuracy = (double)correct / testData.size() * 100.0;
 }
