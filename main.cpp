@@ -164,7 +164,40 @@ void runManualInput(Classifier* clf) {
 }
 
 void runFileMode(Classifier* clf) {
-    // TODO: implement
+    std::cout << "\nEnter input filename (e.g., unknownData.txt): ";
+    std::string inputFile;
+    std::cin >> inputFile;
+    clearInput();
+
+    std::vector<DataPoint> points = DataLoader::loadUnknownData(inputFile);
+
+    if (points.empty()) {
+        std::cout << "[Error] No valid data found in: " << inputFile << "\n";
+        return;
+    }
+
+    // Classify all points
+    clf->classifyAll(points);
+
+    // Output filename
+    std::cout << "Enter output filename (default: result.txt): ";
+    std::string outputFile;
+    std::getline(std::cin, outputFile);
+    if (outputFile.empty()) outputFile = "result.txt";
+
+    DataLoader::writeResults(outputFile, points);
+
+    // Preview first 5
+    std::cout << "\nPreview (first 5 results):\n";
+    std::cout << "  x,y,z,label,Orientation\n";
+    int preview = std::min((int)points.size(), 5);
+    for (int i = 0; i < preview; i++) {
+        const auto& p = points[i];
+        std::cout << "  " << p.x << "," << p.y << "," << p.z << ","
+            << p.label << "," << p.getOrientationName() << "\n";
+    }
+    if ((int)points.size() > 5)
+        std::cout << "  ... and " << (points.size() - 5) << " more.\n";
 }
 
 void runTestAccuracy(Classifier* clf) {
