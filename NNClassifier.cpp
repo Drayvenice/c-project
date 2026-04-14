@@ -1,6 +1,7 @@
 #include "NNClassifier.h"
 #include <cmath>
 #include <iostream>
+#include <cfloat>
 
 /**
  * @file NNClassifier.cpp
