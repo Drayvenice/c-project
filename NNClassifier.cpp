@@ -26,9 +26,11 @@ void NNClassifier::train(const std::vector<DataPoint>& trainingData) {
 }
 
 int NNClassifier::predict(const DataPoint& point) {
-    // TODO: Loop through trainingData_
-    // TODO: Find the point with smallest euclideanDistance
-    // TODO: Return that point's label
+    if (trainingData_.empty()) {
+        std::cerr << "[NNClassifier] Error: classifier has not been trained." << std::endl;
+        return 0;
+    }
+
     double minDist = DBL_MAX;
     int bestLabel = -1;
 
@@ -42,7 +44,6 @@ int NNClassifier::predict(const DataPoint& point) {
 
     return bestLabel;
 }
-
 double NNClassifier::evaluate(const std::vector<DataPoint>& testData) {
     // TODO: For each point in testData, call predict()
     // TODO: Compare predicted label vs actual label
