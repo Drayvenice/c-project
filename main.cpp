@@ -56,7 +56,12 @@ int main() {
         std::cout << "  Your choice: ";
 
         int choice;
-        std::cin >> choice;
+        if (!(std::cin >> choice)) {
+            std::cin.clear();
+            clearInput();
+            std::cout << "[Error] Invalid input. Please enter a number.\n";
+            continue;
+        }
         clearInput();
 
         if (choice == 0) {
