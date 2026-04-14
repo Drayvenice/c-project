@@ -201,7 +201,17 @@ void runFileMode(Classifier* clf) {
 }
 
 void runTestAccuracy(Classifier* clf) {
-    // TODO: implement
+    std::cout << "\n[Testing] Loading " << TESTING_FILE << "...\n";
+
+    std::vector<DataPoint> testData = DataLoader::loadLabeledData(TESTING_FILE);
+
+    if (testData.empty()) {
+        std::cout << "[Error] Could not load testing data.\n";
+        return;
+    }
+
+    double accuracy = clf->evaluate(testData);
+    std::cout << "  Final Accuracy: " << accuracy << "%\n";
 }
 
 void clearInput() {
