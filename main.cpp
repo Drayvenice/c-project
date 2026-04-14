@@ -32,15 +32,26 @@ void clearInput();
  * @brief Application entry point.
  */
 int main() {
-    // TODO: print banner
-    // TODO: load training data
+    printBanner();
+
     // TODO: classifier selection menu
     // TODO: run selected classifier
     return 0;
 }
 
 void printBanner() {
-    // TODO: implement
+    std::cout << "============================================\n";
+    std::cout << "   Phone Orientation Classifier\n";
+    std::cout << "   PROG71020 - OOP Winter 2026\n";
+    std::cout << "============================================\n";
+    std::cout << "\nLabel  Orientation\n";
+    std::cout << "-----  --------------------\n";
+    std::cout << "  1    Face up\n";
+    std::cout << "  2    Face down\n";
+    std::cout << "  3    Portrait\n";
+    std::cout << "  4    Portrait upside down\n";
+    std::cout << "  5    Landscape left\n";
+    std::cout << "  6    Landscape right\n";
 }
 
 void runNNMode(Classifier* clf) {
