@@ -1,8 +1,8 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include "../OOP_Project/DataPoint.h"
-#include "../OOP_Project/DataLoader.h"
-#include "../OOP_Project/NNClassifier.h"
+#include "../DataPoint.h"
+#include "../DataLoader.h"
+#include "../NNClassifier.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
