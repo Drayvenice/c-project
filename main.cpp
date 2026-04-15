@@ -155,7 +155,12 @@ void runManualInput(Classifier* clf) {
     std::cout << "  x y z: ";
 
     double x, y, z;
-    std::cin >> x >> y >> z;
+    if (!(std::cin >> x >> y >> z)) {
+        std::cin.clear();
+        clearInput();
+        std::cout << "[Error] Invalid numeric input. Please try again.\n";
+        return;
+    }
     clearInput();
 
     DataPoint point(x, y, z);
