@@ -1,0 +1,122 @@
+\doxysection{Data\+Loader Class Reference}
+\hypertarget{class_data_loader}{}\label{class_data_loader}\index{DataLoader@{DataLoader}}
+
+
+Reads training/\+testing/\+unknown data from .txt files. Writes classification results to output files.  
+
+
+
+
+{\ttfamily \+\#include $<$Data\+Loader.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \doxymbox{\hyperlink{class_data_loader_a1a88f07212bfcb74527ca901b5775b8a}{load\+Labeled\+Data}} (const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Load labeled data (training or testing). Format:\+ x,y,z,label. \end{DoxyCompactList}\item 
+static std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \doxymbox{\hyperlink{class_data_loader_a061384773f4c055588e347b27d1d27aa}{load\+Unknown\+Data}} (const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Load unlabeled data (unknown samples). Format:\+ x,y,z. \end{DoxyCompactList}\item 
+static bool \doxymbox{\hyperlink{class_data_loader_ae343c2865f8b6e50b70c52bcb7f23052}{write\+Results}} (const std::\+string \&filename, const std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Write classified results to output file. Format:\+ x,y,z,label,Orientation\+Name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reads training/\+testing/\+unknown data from .txt files. Writes classification results to output files. 
+
+\label{doc-func-members}
+\Hypertarget{class_data_loader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_loader_a1a88f07212bfcb74527ca901b5775b8a}\index{DataLoader@{DataLoader}!loadLabeledData@{loadLabeledData}}
+\index{loadLabeledData@{loadLabeledData}!DataLoader@{DataLoader}}
+\doxysubsubsection{\texorpdfstring{loadLabeledData()}{loadLabeledData()}}
+{\footnotesize\ttfamily \label{class_data_loader_a1a88f07212bfcb74527ca901b5775b8a} 
+std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ Data\+Loader::\+load\+Labeled\+Data (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Load labeled data (training or testing). Format:\+ x,y,z,label. 
+
+Loads labeled data from a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of Data\+Points
+\end{DoxyReturn}
+Reads each line in format x,y,z,label. Skips invalid rows where values are outside \+[-\/1, 1]\+. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the input file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of valid Data\+Points 
+\end{DoxyReturn}
+\Hypertarget{class_data_loader_a061384773f4c055588e347b27d1d27aa}\index{DataLoader@{DataLoader}!loadUnknownData@{loadUnknownData}}
+\index{loadUnknownData@{loadUnknownData}!DataLoader@{DataLoader}}
+\doxysubsubsection{\texorpdfstring{loadUnknownData()}{loadUnknownData()}}
+{\footnotesize\ttfamily \label{class_data_loader_a061384773f4c055588e347b27d1d27aa} 
+std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ Data\+Loader::\+load\+Unknown\+Data (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Load unlabeled data (unknown samples). Format:\+ x,y,z. 
+
+Loads unlabeled data from a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of Data\+Points with label = 0
+\end{DoxyReturn}
+Reads each line in format x,y,z (no label). Skips invalid rows where values are outside \+[-\/1, 1]\+. All loaded points get label = 0 (unknown). 
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path to the input file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of Data\+Points with label = 0 
+\end{DoxyReturn}
+\Hypertarget{class_data_loader_ae343c2865f8b6e50b70c52bcb7f23052}\index{DataLoader@{DataLoader}!writeResults@{writeResults}}
+\index{writeResults@{writeResults}!DataLoader@{DataLoader}}
+\doxysubsubsection{\texorpdfstring{writeResults()}{writeResults()}}
+{\footnotesize\ttfamily \label{class_data_loader_ae343c2865f8b6e50b70c52bcb7f23052} 
+bool Data\+Loader::\+write\+Results (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{, }\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&}]{points}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write classified results to output file. Format:\+ x,y,z,label,Orientation\+Name. 
+
+Writes classification results to an output file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Output file path \\
+\hline
+{\em points} & Classified Data\+Points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if successful
+\end{DoxyReturn}
+Output format per line:\+ x,y,z,label,Orientation\+Name Example:\+ -\/0.\+14139,-\/0.\+04982,-\/0.\+9887,1,Face up 
+\begin{DoxyParams}{Parameters}
+{\em filename} & Output file path (e.\+g., "{}result.\+txt"{}) \\
+\hline
+{\em points} & Vector of classified Data\+Points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if write was successful, false otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{_data_loader_8h}{Data\+Loader.\+h}}\item 
+\doxymbox{\hyperlink{_data_loader_8cpp}{Data\+Loader.\+cpp}}\end{DoxyCompactItemize}

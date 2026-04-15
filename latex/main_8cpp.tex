@@ -1,0 +1,129 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Entry point -\/ handles user interaction and classifier selection.  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$limits$>$}\newline
+{\ttfamily \+\#include "{}Data\+Point.\+h"{}}\newline
+{\ttfamily \+\#include "{}Data\+Loader.\+h"{}}\newline
+{\ttfamily \+\#include "{}Classifier.\+h"{}}\newline
+{\ttfamily \+\#include "{}NNClassifier.\+h"{}}\newline
+{\ttfamily \+\#include "{}Stub\+Classifiers.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_aeb93e25e95d089d3e1c79baf4a71b594}\label{main_8cpp_aeb93e25e95d089d3e1c79baf4a71b594} 
+void {\bfseries print\+Banner} ()
+\begin{DoxyCompactList}\small\item\em Displays the application banner and orientation table. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_abc8ff590adf1d2a07e16b9f140857fd7}{run\+NNMode}} (\doxymbox{\hyperlink{class_classifier}{Classifier}} \texorpdfstring{$\ast$}{*}clf)
+\begin{DoxyCompactList}\small\item\em Handles the NN classifier sub-\/menu. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_aa45542894a99256eb01b7ddf1fd7db8c}{run\+Manual\+Input}} (\doxymbox{\hyperlink{class_classifier}{Classifier}} \texorpdfstring{$\ast$}{*}clf)
+\begin{DoxyCompactList}\small\item\em Handles manual x,y,z input and prints the predicted orientation. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_a98064bda5543d96e11edee0a2dde8a14}{run\+File\+Mode}} (\doxymbox{\hyperlink{class_classifier}{Classifier}} \texorpdfstring{$\ast$}{*}clf)
+\begin{DoxyCompactList}\small\item\em Reads an unknown data file, classifies all points, writes result.\+txt. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{main_8cpp_a3c8aa6cfcbd804f6ddfadce72745ea5d}{run\+Test\+Accuracy}} (\doxymbox{\hyperlink{class_classifier}{Classifier}} \texorpdfstring{$\ast$}{*}clf)
+\begin{DoxyCompactList}\small\item\em Evaluates classifier accuracy using testing\+Data.\+txt. \end{DoxyCompactList}\item 
+\Hypertarget{main_8cpp_a5d555657ce648c1a47abb70f1029589d}\label{main_8cpp_a5d555657ce648c1a47abb70f1029589d} 
+void {\bfseries clear\+Input} ()
+\begin{DoxyCompactList}\small\item\em Clears the input buffer. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Application entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_aa7470ae49e9f234693818081f575dc3b}\label{main_8cpp_aa7470ae49e9f234693818081f575dc3b} 
+const std::\+string {\bfseries TRAINING\+\_\+\+FILE} = "{}training\+Data.\+txt"{}
+\item 
+\Hypertarget{main_8cpp_a79b2aa3b45764a6a5bd22d464876f8b5}\label{main_8cpp_a79b2aa3b45764a6a5bd22d464876f8b5} 
+const std::\+string {\bfseries TESTING\+\_\+\+FILE} = "{}testing\+Data.\+txt"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point -\/ handles user interaction and classifier selection. 
+
+\begin{DoxyAuthor}{Author}
+Kristen \& Drayven @course PROG71020 -\/ OOP Winter 2026 
+\end{DoxyAuthor}
+
+
+\label{doc-func-members}
+\Hypertarget{main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Application entry point. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, 1 on error 
+\end{DoxyReturn}
+\Hypertarget{main_8cpp_a98064bda5543d96e11edee0a2dde8a14}\index{main.cpp@{main.cpp}!runFileMode@{runFileMode}}
+\index{runFileMode@{runFileMode}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{runFileMode()}{runFileMode()}}
+{\footnotesize\ttfamily \label{main_8cpp_a98064bda5543d96e11edee0a2dde8a14} 
+void run\+File\+Mode (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_classifier}{Classifier}} \texorpdfstring{$\ast$}{*}}]{clf}{}\end{DoxyParamCaption})}
+
+
+
+Reads an unknown data file, classifies all points, writes result.\+txt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clf} & Pointer to the trained classifier \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_aa45542894a99256eb01b7ddf1fd7db8c}\index{main.cpp@{main.cpp}!runManualInput@{runManualInput}}
+\index{runManualInput@{runManualInput}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{runManualInput()}{runManualInput()}}
+{\footnotesize\ttfamily \label{main_8cpp_aa45542894a99256eb01b7ddf1fd7db8c} 
+void run\+Manual\+Input (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_classifier}{Classifier}} \texorpdfstring{$\ast$}{*}}]{clf}{}\end{DoxyParamCaption})}
+
+
+
+Handles manual x,y,z input and prints the predicted orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clf} & Pointer to the trained classifier \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_abc8ff590adf1d2a07e16b9f140857fd7}\index{main.cpp@{main.cpp}!runNNMode@{runNNMode}}
+\index{runNNMode@{runNNMode}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{runNNMode()}{runNNMode()}}
+{\footnotesize\ttfamily \label{main_8cpp_abc8ff590adf1d2a07e16b9f140857fd7} 
+void run\+NNMode (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_classifier}{Classifier}} \texorpdfstring{$\ast$}{*}}]{clf}{}\end{DoxyParamCaption})}
+
+
+
+Handles the NN classifier sub-\/menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clf} & Pointer to the trained classifier \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_a3c8aa6cfcbd804f6ddfadce72745ea5d}\index{main.cpp@{main.cpp}!runTestAccuracy@{runTestAccuracy}}
+\index{runTestAccuracy@{runTestAccuracy}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{runTestAccuracy()}{runTestAccuracy()}}
+{\footnotesize\ttfamily \label{main_8cpp_a3c8aa6cfcbd804f6ddfadce72745ea5d} 
+void run\+Test\+Accuracy (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_classifier}{Classifier}} \texorpdfstring{$\ast$}{*}}]{clf}{}\end{DoxyParamCaption})}
+
+
+
+Evaluates classifier accuracy using testing\+Data.\+txt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clf} & Pointer to the trained classifier \\
+\hline
+\end{DoxyParams}

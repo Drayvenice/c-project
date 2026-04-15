@@ -1,0 +1,102 @@
+\doxysection{Another\+Classifier Class Reference}
+\hypertarget{class_another_classifier}{}\label{class_another_classifier}\index{AnotherClassifier@{AnotherClassifier}}
+
+
+Placeholder — all methods just print their function name.  
+
+
+
+
+{\ttfamily \+\#include $<$Stub\+Classifiers.\+h$>$}
+
+Inheritance diagram for Another\+Classifier:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_another_classifier}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_another_classifier_a9dc8965cbbca00534068a2899db1adbc}{train}} (const std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&training\+Data) override
+\begin{DoxyCompactList}\small\item\em Train the classifier using labeled data. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_another_classifier_ac275d612732012df7778295ff6e673c6}{predict}} (const \doxymbox{\hyperlink{class_data_point}{Data\+Point}} \&point) override
+\begin{DoxyCompactList}\small\item\em Predict the label for a single point. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_another_classifier_a76f7cb45f0c64dee7b9e31d58269a355}{evaluate}} (const std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&test\+Data) override
+\begin{DoxyCompactList}\small\item\em Evaluate accuracy on labeled test data. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{class_another_classifier_a4bf7217768cd22d8c634766f932f87f0}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Return the name of this classifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_classifier}{Classifier}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries classify\+All} (std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Classify all points in a vector (uses predict internally). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Placeholder — all methods just print their function name. 
+
+\label{doc-func-members}
+\Hypertarget{class_another_classifier_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_another_classifier_a76f7cb45f0c64dee7b9e31d58269a355}\index{AnotherClassifier@{AnotherClassifier}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!AnotherClassifier@{AnotherClassifier}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily \label{class_another_classifier_a76f7cb45f0c64dee7b9e31d58269a355} 
+double Another\+Classifier::\+evaluate (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&}]{test\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluate accuracy on labeled test data. 
+
+
+
+Implements \doxymbox{\hyperlink{class_classifier_a194e4fb7996e25515e5736eaf4dd4169}{Classifier}}.
+
+\Hypertarget{class_another_classifier_a4bf7217768cd22d8c634766f932f87f0}\index{AnotherClassifier@{AnotherClassifier}!getName@{getName}}
+\index{getName@{getName}!AnotherClassifier@{AnotherClassifier}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_another_classifier_a4bf7217768cd22d8c634766f932f87f0} 
+std::\+string Another\+Classifier::\+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the name of this classifier. 
+
+
+
+Implements \doxymbox{\hyperlink{class_classifier_ae1b6b5f6a63c4c7169323586e61725f6}{Classifier}}.
+
+\Hypertarget{class_another_classifier_ac275d612732012df7778295ff6e673c6}\index{AnotherClassifier@{AnotherClassifier}!predict@{predict}}
+\index{predict@{predict}!AnotherClassifier@{AnotherClassifier}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily \label{class_another_classifier_ac275d612732012df7778295ff6e673c6} 
+int Another\+Classifier::\+predict (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_data_point}{Data\+Point}} \&}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Predict the label for a single point. 
+
+
+
+Implements \doxymbox{\hyperlink{class_classifier_a55633df7bb0c5d3ca6ff975fef78d3e6}{Classifier}}.
+
+\Hypertarget{class_another_classifier_a9dc8965cbbca00534068a2899db1adbc}\index{AnotherClassifier@{AnotherClassifier}!train@{train}}
+\index{train@{train}!AnotherClassifier@{AnotherClassifier}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily \label{class_another_classifier_a9dc8965cbbca00534068a2899db1adbc} 
+void Another\+Classifier::\+train (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&}]{training\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Train the classifier using labeled data. 
+
+
+
+Implements \doxymbox{\hyperlink{class_classifier_aace40dc4460f9c0f2db1524750662cb4}{Classifier}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{_stub_classifiers_8h}{Stub\+Classifiers.\+h}}\end{DoxyCompactItemize}

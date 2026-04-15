@@ -1,0 +1,105 @@
+\doxysection{NNClassifier Class Reference}
+\hypertarget{class_n_n_classifier}{}\label{class_n_n_classifier}\index{NNClassifier@{NNClassifier}}
+
+
+Classifies using 1-\/Nearest Neighbor algorithm.  
+
+
+
+
+{\ttfamily \+\#include $<$NNClassifier.\+h$>$}
+
+Inheritance diagram for NNClassifier:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_n_n_classifier}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_n_n_classifier_a3e91a55808c6a76191c5033d57aa9b30}{train}} (const std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&training\+Data) override
+\begin{DoxyCompactList}\small\item\em Train the classifier using labeled data. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_n_n_classifier_a3e759eca26bf489e28de24e33bd3f722}{predict}} (const \doxymbox{\hyperlink{class_data_point}{Data\+Point}} \&point) override
+\begin{DoxyCompactList}\small\item\em Predict the label for a single point. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_n_n_classifier_aa0d427a82b078cdb76beeb1cbf165dd7}{evaluate}} (const std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&test\+Data) override
+\begin{DoxyCompactList}\small\item\em Evaluate accuracy on labeled test data. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{class_n_n_classifier_a06676ddc00f2bde04465aef7d41981c3}{get\+Name}} () const override
+\begin{DoxyCompactList}\small\item\em Return the name of this classifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_classifier}{Classifier}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries classify\+All} (std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Classify all points in a vector (uses predict internally). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classifies using 1-\/Nearest Neighbor algorithm. 
+
+Distance formula:\+ d = sqrt((x1-\/x2)\texorpdfstring{$^\wedge$}{\string^}2 + (y1-\/y2)\texorpdfstring{$^\wedge$}{\string^}2 + (z1-\/z2)\texorpdfstring{$^\wedge$}{\string^}2) 
+
+\label{doc-func-members}
+\Hypertarget{class_n_n_classifier_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_n_n_classifier_aa0d427a82b078cdb76beeb1cbf165dd7}\index{NNClassifier@{NNClassifier}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!NNClassifier@{NNClassifier}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily \label{class_n_n_classifier_aa0d427a82b078cdb76beeb1cbf165dd7} 
+double NNClassifier::\+evaluate (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&}]{test\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Evaluate accuracy on labeled test data. 
+
+
+
+Implements \doxymbox{\hyperlink{class_classifier_a194e4fb7996e25515e5736eaf4dd4169}{Classifier}}.
+
+\Hypertarget{class_n_n_classifier_a06676ddc00f2bde04465aef7d41981c3}\index{NNClassifier@{NNClassifier}!getName@{getName}}
+\index{getName@{getName}!NNClassifier@{NNClassifier}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_n_n_classifier_a06676ddc00f2bde04465aef7d41981c3} 
+std::\+string NNClassifier::\+get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the name of this classifier. 
+
+
+
+Implements \doxymbox{\hyperlink{class_classifier_ae1b6b5f6a63c4c7169323586e61725f6}{Classifier}}.
+
+\Hypertarget{class_n_n_classifier_a3e759eca26bf489e28de24e33bd3f722}\index{NNClassifier@{NNClassifier}!predict@{predict}}
+\index{predict@{predict}!NNClassifier@{NNClassifier}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily \label{class_n_n_classifier_a3e759eca26bf489e28de24e33bd3f722} 
+int NNClassifier::\+predict (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_data_point}{Data\+Point}} \&}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Predict the label for a single point. 
+
+
+
+Implements \doxymbox{\hyperlink{class_classifier_a55633df7bb0c5d3ca6ff975fef78d3e6}{Classifier}}.
+
+\Hypertarget{class_n_n_classifier_a3e91a55808c6a76191c5033d57aa9b30}\index{NNClassifier@{NNClassifier}!train@{train}}
+\index{train@{train}!NNClassifier@{NNClassifier}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily \label{class_n_n_classifier_a3e91a55808c6a76191c5033d57aa9b30} 
+void NNClassifier::\+train (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_data_point}{Data\+Point}} $>$ \&}]{training\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Train the classifier using labeled data. 
+
+
+
+Implements \doxymbox{\hyperlink{class_classifier_aace40dc4460f9c0f2db1524750662cb4}{Classifier}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{_n_n_classifier_8h}{NNClassifier.\+h}}\item 
+\doxymbox{\hyperlink{_n_n_classifier_8cpp}{NNClassifier.\+cpp}}\end{DoxyCompactItemize}

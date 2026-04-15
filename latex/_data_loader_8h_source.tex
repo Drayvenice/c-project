@@ -1,0 +1,20 @@
+\doxysection{Data\+Loader.\+h}
+\hypertarget{_data_loader_8h_source}{}\label{_data_loader_8h_source}\doxymbox{\hyperlink{_data_loader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_data_point_8h}{DataPoint.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_data_loader}{DataLoader}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<DataPoint>\ \doxymbox{\hyperlink{class_data_loader_a1a88f07212bfcb74527ca901b5775b8a}{loadLabeledData}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<DataPoint>\ \doxymbox{\hyperlink{class_data_loader_a061384773f4c055588e347b27d1d27aa}{loadUnknownData}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_data_loader_ae343c2865f8b6e50b70c52bcb7f23052}{writeResults}}(\textcolor{keyword}{const}\ std::string\&\ filename,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<DataPoint>\&\ points);}
+\DoxyCodeLine{00044\ \};}
+
+\end{DoxyCode}
